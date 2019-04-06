@@ -1,0 +1,40 @@
+﻿#####Windows Services#####
+#Get ALL Services
+Get-Service
+
+#Get RUNNING Services
+Get-Service | Where-Object {$_.Status -eq "Running"}
+
+#Get STOPPED or STOPPING Services
+#Tip: Running and stopped aren't the only states a service can exist in, so we want to see things that aren't in the "Running" (we can see stopping, starting, restarting this way)
+Get-Service | Where-Object {$_.Status -ne "Running"} 
+
+#Get SINGLE Service
+Get-Service -DisplayName <service>
+
+#Stop Service
+Stop-Service -DisplayName <service>
+
+#Start Service
+Start-Service -DisplayName <service>
+
+#Disable Service
+Set-Service -Name <service> -StartupType [Disabled]
+
+#Enable Service
+Set-Service -Name <service> -StartupType [Automatic]
+
+#Manual Start Service
+Set-Service -Name <service> -StartupType [Manual]
+
+###########################
+#####Windows Processes#####
+
+#Get all running processes
+Get-Process
+
+#Stop a running process
+Stop-Process -Name <process>
+
+#Another way to stop a running process
+Get-Process -Name <process> | Stop-Process
