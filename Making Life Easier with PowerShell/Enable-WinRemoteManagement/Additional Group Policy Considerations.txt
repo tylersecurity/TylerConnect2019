@@ -1,0 +1,8 @@
+###Additional Considerations for a Base WinRM Policy
+
+Computer Configuration -> Policies -> Administrative Templates -> Windows Components -> Windows Remote Management (WinRM) -> WinRM Service
+-- Allow Basic Authentication -> Disabled
+
+###Disabling Basic authentication on the WinRM client is fine for most applications and environments; however, certain Microsoft O365 services such as Exchange Online still require basic authentication to be enabled on the client side of things
+Computer Configuration -> Policies -> Administrative Templates -> Windows Components -> Windows Remote Management (WinRM) -> WinRM Client
+-- Allow Basic Authentication -> Disabled

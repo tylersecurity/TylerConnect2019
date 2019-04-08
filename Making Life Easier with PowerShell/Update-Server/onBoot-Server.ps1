@@ -1,0 +1,1 @@
+﻿Send-MailMessage -From "joel.stuedle@tylertech.com" -To "joel.stuedle@tylertech.com" -Subject "[onBoot-Server] - Connect 2016 Server Rebooted Successfully" -Body ("Server started on " + (Get-Date).DateTime + ".") -SmtpServer "relay.tylertech.com" -Port 25 -BodyAsHtml
